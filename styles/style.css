@@ -112,6 +112,7 @@ body {
 	background-color: black;
 	color: white;
 	text-align: center;
+	z-index: 100;
 }
 .navBarElem {
 	font-size: 20px;
@@ -124,7 +125,7 @@ body {
 	position: absolute;
 	height: 100%;
 	top: 0;
-	right: 15%;
+	right: 8%;
 }
 .navBarNew {
 	display: inline-block;
