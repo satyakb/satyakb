@@ -73,7 +73,7 @@
  	$('.underline.on').removeClass('on').addClass('off').hide();
  	$('.navBarAbout').find('.underline').removeClass('off').addClass('on').show();
  	$('#aboutPage').show();
- 	openInnerPage();
+ 	openOuterPage();
  }
 
  function showWork() {
@@ -81,7 +81,7 @@
  	$('.underline.on').removeClass('on').addClass('off').hide();
  	$('.navBarWork').find('.underline').removeClass('off').addClass('on').show();
  	$('#workPage').show();
- 	openOuterPage();
+ 	openInnerPage();
  }
 
  function showContact() {

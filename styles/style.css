@@ -55,9 +55,10 @@ body {
 }
 #titlePanel {
 	width: 34%;
+	left: 66%;
 }
 #aboutPanel {
-	left: 34%;
+	left: 0%;
 }
 .panelName {
 	position: absolute;
@@ -90,7 +91,7 @@ body {
 	border-radius: 3px;
 }
 #workPanel {
-	left: 67%;
+	left: 33%;
 }
 .panel span {
 	position: relative;
