@@ -115,7 +115,7 @@
 
  	$(window).bind('hashchange', function() {
  		var h = location.hash;
- 		if (h === '#about1') {
+ 		if (h === '#about') {
  			showAbout();
  		}
  		if (h === '#work') {
@@ -130,7 +130,7 @@
  	});
 
  	$('.panel').hover(function() {
- 		var panel = $(this).attr('id');
+ 		var panel = $(this).attr('href');
  		var ease = 'easeInOutQuad';
  		$('#' + panel + 'Name').animate({
  			opacity: 0
@@ -142,7 +142,7 @@
  			opacity: 1
  		}, 400, ease);
  	}, function() {
- 		var panel = $(this).attr('id');
+ 		var panel = $(this).attr('href');
  		var ease = 'easeInOutQuad';
  		$('#' + panel + 'Blurb').stop().animate({
  			opacity: 0

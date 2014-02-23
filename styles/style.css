@@ -53,10 +53,10 @@ body {
 .panel div {
 	text-align: center;
 }
-#title {
+#titlePanel {
 	width: 34%;
 }
-#about {
+#aboutPanel {
 	left: 34%;
 }
 .panelName {
@@ -89,7 +89,7 @@ body {
 	background-color: white;
 	border-radius: 3px;
 }
-#work {
+#workPanel {
 	left: 67%;
 }
 .panel span {
