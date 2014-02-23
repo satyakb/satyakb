@@ -84,6 +84,14 @@
  	openOuterPage();
  }
 
+ function showContact() {
+ 	$('.page').hide();
+ 	$('.underline.on').removeClass('on').addClass('off').hide();
+ 	$('.navBarContact').find('.underline').removeClass('off').addClass('on').show();
+ 	$('#contactPage').show();
+ 	openOuterPage();
+ }
+
  $(document).ready(function() {
 
  	// setTimeout(function() {
@@ -93,7 +101,7 @@
  	// 	}
   // 	}, 1000);
 
- 	$('.panel.linked').on('click', function(e) {
+ 	$('.panel').on('click', function(e) {
  		e.preventDefault();
  		var h = $(this).attr('href');
  		window.location.hash = h;
@@ -112,6 +120,9 @@
  		}
  		if (h === '#work') {
  			showWork();
+ 		}
+ 		if (h === '#contact') {
+ 			showContact();
  		}
  		if (h === '') {
  			closeInnerPage();
