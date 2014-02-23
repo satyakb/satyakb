@@ -173,13 +173,12 @@ body {
 #aboutPic {
 	left: 50%;
 	position: absolute;
-	width: 100%;
 	top: 75px;
 	z-index: -1;
 }
 #aboutPic img {
-	width: 625px;
-	height: 625px;
+	width: 635px;
+	height: 635px;
 }
 #aboutText {
 	position: relative;
