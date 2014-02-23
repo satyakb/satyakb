@@ -68,6 +68,22 @@
  	}, s, ease); 
  }
 
+ function showAbout() {
+ 	$('.page').hide();
+ 	$('.underline.on').removeClass('on').addClass('off').hide();
+ 	$('.navBarAbout').find('.underline').removeClass('off').addClass('on').show();
+ 	$('#aboutPage').show();
+ 	openInnerPage();
+ }
+
+ function showWork() {
+ 	$('.page').hide();
+ 	$('.underline.on').removeClass('on').addClass('off').hide();
+ 	$('.navBarWork').find('.underline').removeClass('off').addClass('on').show();
+ 	$('#workPage').show();
+ 	openOuterPage();
+ }
+
  $(document).ready(function() {
 
  	// setTimeout(function() {
@@ -77,32 +93,25 @@
  	// 	}
   // 	}, 1000);
 
- 	$('#about').on('click', function(e) {
+ 	$('.panel.linked').on('click', function(e) {
  		e.preventDefault();
- 		window.location.hash = 'about';
+ 		var h = $(this).attr('href');
+ 		window.location.hash = h;
  	});
 
- 	$('#work').on('click', function(e) {
+ 	$('.navBarNew').on('click', function(e) {
  		e.preventDefault();
- 		window.location.hash = 'work';
- 	});
-
- 	$('.navBarBack').on('click', function(e) {
- 		e.preventDefault();
- 		window.location.hash = '';
+ 		var h = $(this).attr('href');
+ 		window.location.hash = h;
  	})
 
  	$(window).bind('hashchange', function() {
  		var h = location.hash;
  		if (h === '#about') {
- 			$('.page').hide();
- 			$('#aboutPage').show();
-			openInnerPage();
+ 			showAbout();
  		}
  		if (h === '#work') {
- 			$('.page').hide();
- 			$('#workPage').show();
-			openInnerPage();
+ 			showWork();
  		}
  		if (h === '') {
  			closeInnerPage();
@@ -135,6 +144,12 @@
  			opacity: 0
  		}, 200, ease);
  	});
+
+ 	$('.navBarNew').hover(function() {
+ 		$(this).find('.underline.off').show();
+ 	}, function() {
+ 		$(this).find('.underline.off').hide();
+ 	})
 
  	// if (window.location.pathname == '/') {
  	// 	console.log('noooo');

@@ -107,38 +107,83 @@ body {
 }
 .navBar {
 	position: fixed;
-	height: 10%;
+	height: 75px;
 	width: 100%;
 	background-color: black;
 	color: white;
 	text-align: center;
 }
 .navBarElem {
-	font-size: 24px;
-	top: 25%;
+	font-size: 20px;
 	position: relative;
 }
-.navBarBack {
+.navBarTitle {
+	font-weight: 500;
+}
+.navBarGroup {
+	position: absolute;
+	height: 100%;
+	top: 0;
+	right: 15%;
+}
+.navBarNew {
+	display: inline-block;
+	cursor: pointer;
+	height: 100%;
+}
+/*.navBarNew:hover {
+	background-color: white;
+	color: black;
+}*/
+.navBarNew span {
+	font-size: 20px;
+	position: relative;
+	top: 30%;
+}
+.navBarHome {
 	position: absolute;
 	left: 2%;
-	cursor: pointer;
+}
+.navBarHome span {
+	font-size: 26px;
+	font-weight: 400;
+	letter-spacing: 3px;
+}
+.navBarAbout {
+}
+.navBarWork {
+	left: 15%;
+}
+.navBarContact {
+	left: 30%;
+}
+.underline {
+	width: 100%;
+	bottom: 0;
+	height: 5px;
+	background-color: white;
+	position: absolute;
+}
+.underline.on {
+}
+.underline.off {
+	display: none;
 }
 #aboutPic {
-	left: 45%;
+	left: 50%;
 	position: absolute;
 	width: 100%;
-	height: 90%;
-	bottom: 0;
+	top: 75px;
 	z-index: -1;
 }
 #aboutPic img {
-	max-height: 100%;
-	min-height: 90%;
+	width: 625px;
+	height: 625px;
 }
 #aboutText {
 	position: relative;
-	top: 25%;
-	left: 5%;
+	top: 150px;
+	left: 8%;
 	width: 35%;
 	/*background: red;*/
 	font-size: 25px;
@@ -146,9 +191,12 @@ body {
 #hello {
 	font-family: "Courier New", Courier, monospace;
 	font-size: 100px;
+	font-weight: 600;
 	letter-spacing: 0px;
 }
 #aboutInfo {
 	font-family: serif;
 	font-weight: 500;
+	position: relative;
+	top: 10px;
 }
