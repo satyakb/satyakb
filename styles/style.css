@@ -1,0 +1,154 @@
+* {
+	margin: 0;
+	padding: 0;
+	font-family: serif;
+	font-weight: 600;
+	letter-spacing: 2px;
+	-webkit-font-smoothing: antialiased;
+}
+body {
+	/*background-image: url('../images/bg.jpg');*/
+	/*background-size: 100%,100%;*/
+}
+#home {
+	height: 100%;
+	width: 100%;
+	position: absolute;
+	/*background-image: url('../images/bg.jpg');*/
+	/*background-size: 100%,100%;*/
+	z-index: 100;
+}
+#dummy {
+	font-family: sans-serif;
+	font-weight: 600;
+	font-size: 20px;
+	color: #f5f5f5;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+}
+.panel {
+	font-size: 30px;
+	display: inline-block;
+	text-align: center;
+	position: absolute;
+	height: 100%;
+	width: 33%;
+	z-index: 100;
+	opacity: 1;
+	background-color: white;
+}
+.panel:hover {
+	color: white;
+	background-color: black;
+}
+.outer {
+	top: -100%;
+ 	bottom: 100%;
+}
+.inner {
+	top: 100%;
+ 	bottom: -100%;
+}
+.panel div {
+	text-align: center;
+}
+#title {
+	width: 34%;
+}
+#about {
+	left: 34%;
+}
+.panelName {
+	position: absolute;
+	width: 100%;
+	top: 50%;
+}
+.blurb {
+	position: absolute;
+	width: 90%;
+	left: 5%;
+	font-size: 15px;
+	font-family: sans-serif;
+	font-weight: 400;
+	letter-spacing: 0px;
+	top: 25%;
+	opacity: 0;
+}
+.moreButtonContainer{
+	position: relative;
+	width: 100%;
+	top: 50%;
+	opacity: 0;
+}
+.moreButton {
+	padding: 3px 10px 3px 10px;
+	font-size: 20px;
+	margin: auto;
+	color: black;
+	background-color: white;
+	border-radius: 3px;
+}
+#work {
+	left: 67%;
+}
+.panel span {
+	position: relative;
+	top: 50%;
+	cursor: pointer;
+}
+.page {
+	position: absolute;
+	height: 100%;
+	width: 100%;
+	display: none;
+	z-index: 99;
+	background-color: white;
+}
+.navBar {
+	position: fixed;
+	height: 10%;
+	width: 100%;
+	background-color: black;
+	color: white;
+	text-align: center;
+}
+.navBarElem {
+	font-size: 24px;
+	top: 25%;
+	position: relative;
+}
+.navBarBack {
+	position: absolute;
+	left: 2%;
+}
+#aboutPic {
+	left: 45%;
+	position: absolute;
+	width: 100%;
+	height: 90%;
+	bottom: 0;
+	z-index: -1;
+}
+#aboutPic img {
+	max-height: 100%;
+	margin-left:auto;
+	margin-right:auto;
+}
+#aboutText {
+	position: relative;
+	top: 25%;
+	left: 5%;
+	width: 35%;
+	/*background: red;*/
+	font-size: 25px;
+}
+#hello {
+	font-family: "Courier New", Courier, monospace;
+	font-size: 100px;
+	letter-spacing: 0px;
+}
+#aboutInfo {
+	font-family: serif;
+	font-weight: 500;
+}
