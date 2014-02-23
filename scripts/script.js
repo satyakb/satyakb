@@ -6,6 +6,7 @@
 
  function openInnerPage() {
  	side = 'inner';
+ 	$('#aboutPage').show();
  	$('.inner').animate({
  		top: '100%',
  		bottom: '-100%'
@@ -44,7 +45,7 @@
  		top: '0',
  		bottom: '0'
  	}, s, ease, function() {;
- 		$('.page').remove();
+ 		$('.page').hide();
  	}); 
  	$('.outer').animate({
  		top: '0',
@@ -59,7 +60,7 @@
  		top: '0',
  		bottom: '0'
  	}, s, ease, function() {
- 		$('.page').remove();
+ 		$('.page').hide();
  	}); 
  	$('.inner').animate({
  		top: '0',
@@ -69,12 +70,44 @@
 
  $(document).ready(function() {
 
- 	setTimeout(function() {
- 		if(!loaded) {
- 			closeInnerPage();
- 			loaded = true;
+ 	// setTimeout(function() {
+ 	// 	if(!loaded) {
+ 	// 		closeInnerPage();
+ 	// 		loaded = true;
+ 	// 	}
+  // 	}, 1000);
+
+ 	$('#about').on('click', function(e) {
+ 		e.preventDefault();
+ 		window.location.hash = 'about';
+ 	});
+
+ 	$('#work').on('click', function(e) {
+ 		e.preventDefault();
+ 		window.location.hash = 'work';
+ 	});
+
+ 	$('.navBarBack').on('click', function(e) {
+ 		e.preventDefault();
+ 		window.location.hash = '';
+ 	})
+
+ 	$(window).bind('hashchange', function() {
+ 		var h = location.hash;
+ 		if (h === '#about') {
+ 			$('.page').hide();
+ 			$('#aboutPage').show();
+			openInnerPage();
  		}
-  	}, 1000);
+ 		if (h === '#work') {
+ 			$('.page').hide();
+ 			$('#workPage').show();
+			openInnerPage();
+ 		}
+ 		if (h === '') {
+ 			closeInnerPage();
+ 		}
+ 	});
 
  	$('.panel').hover(function() {
  		var panel = $(this).attr('id');
@@ -103,37 +136,53 @@
  		}, 200, ease);
  	});
 
+ 	// if (window.location.pathname == '/') {
+ 	// 	console.log('noooo');
+ 	// 	window.location.replace('/#');
+ 	// }
 
- 	function setupHistoryClicks() {
- 		addClicker($('#about'));
- 		addClicker($('#work'));
- 	}
+ 	// if (window.location.pathname == '/#about') {
+ 	// 	console.log('aboutttttt');
+ 	// }
 
- 	function addClicker(link) {
- 		link.on('click', function(e) {
- 			console.log('whoo');
- 			existing = true;
- 			getPage(link.attr('href'));
- 			history.pushState(null,null,link.attr('href'));
- 			console.log(link.attr('href'));
- 			e.preventDefault();
- 		});
- 	}
+ 	$(window).trigger('hashchange');
 
- 	function getPage(href) {
- 		var req = new XMLHttpRequest();
- 		req.open("GET", href, false);
- 		console.log(href);
- 		req.send(null);
-		if (req.status == 200) {
-			console.log(req.responseText);
-			$('body').append(req.responseText);
-			$('.page').show();
-			openInnerPage();
-			return true;
-		}
-		return false;
- 	}
+ 	// window.addEventListener('popstate', function(e) {
+ 	// 	if (location.pathname == '/') {
+ 	// 		location.replace('#home');
+ 	// 	}
+ 	// });
+
+ 	// function setupHistoryClicks() {
+ 	// 	addClicker($('#about'));
+ 	// 	addClicker($('#work'));
+ 	// }
+
+ 	// function addClicker(link) {
+ 	// 	link.on('click', function(e) {
+ 	// 		console.log('whoo');
+ 	// 		existing = true;
+ 	// 		getPage(link.attr('href'));
+ 	// 		history.pushState(null,null,link.attr('href'));
+ 	// 		console.log(link.attr('href'));
+ 	// 		e.preventDefault();
+ 	// 	});
+ 	// }
+
+ 	// function getPage(href) {
+ 	// 	var req = new XMLHttpRequest();
+ 	// 	req.open("GET", href, false);
+ 	// 	console.log(href);
+ 	// 	req.send(null);
+		// if (req.status == 200) {
+		// 	console.log(req.responseText);
+		// 	$('body').append(req.responseText);
+		// 	$('.page').show();
+		// 	openInnerPage();
+		// 	return true;
+		// }
+		// return false;
+ 	// }
 
 //  	xmlhttp.open("GET", url , true);
 // xmlhttp.onreadystatechange = function() {
@@ -144,49 +193,49 @@
 // }
 // xmlhttp.send();
 
- 	window.addEventListener("popstate", function(e) {
-    	if (location.pathname == '/' || location.pathname == '/index.html') {
-    		var req = new XMLHttpRequest();
- 			req.open("GET", 'index.html', false);
- 			req.send(null);
- 			if (req.status == 200) {
- 				if (side == 'inner') {
- 					closeInnerPage();
- 				} else if (side == 'outer') {
- 					closeOuterPage();
- 				}
-    			console.log('whoooooooo');
-    			return true;
-  			}
-    	}
+ // 	window.addEventListener("popstate", function(e) {
+ //    	if (location.pathname == '/' || location.pathname == '/index.html') {
+ //    		var req = new XMLHttpRequest();
+ // 			req.open("GET", 'index.html', false);
+ // 			req.send(null);
+ // 			if (req.status == 200) {
+ // 				if (side == 'inner') {
+ // 					closeInnerPage();
+ // 				} else if (side == 'outer') {
+ // 					closeOuterPage();
+ // 				}
+ //    			console.log('whoooooooo');
+ //    			return true;
+ //  			}
+ //    	}
 
-    	if (location.pathname == '/about.html') {
-    		var req = new XMLHttpRequest();
-	 		req.open("GET", '/about.html', false);
-	 		req.send(null);
-			if (req.status == 200) {
-				$('body').append(req.responseText);
-				$('.page').show();
-				openInnerPage();
-				return true;
-			}
-    	}
+ //    	if (location.pathname == '/about.html') {
+ //    		var req = new XMLHttpRequest();
+	//  		req.open("GET", '/about.html', false);
+	//  		req.send(null);
+	// 		if (req.status == 200) {
+	// 			$('body').append(req.responseText);
+	// 			$('.page').show();
+	// 			openInnerPage();
+	// 			return true;
+	// 		}
+ //    	}
 
-    	if (location.pathname == '/work.html') {
-    		var req = new XMLHttpRequest();
-	 		req.open("GET", '/work.html', false);
-	 		req.send(null);
-			if (req.status == 200) {
-				$('body').append(req.responseText);
-				$('.page').show();
-				openOuterPage();
-				return true;
-			}
-    	}
-    	return false;
-	});
+ //    	if (location.pathname == '/work.html') {
+ //    		var req = new XMLHttpRequest();
+	//  		req.open("GET", '/work.html', false);
+	//  		req.send(null);
+	// 		if (req.status == 200) {
+	// 			$('body').append(req.responseText);
+	// 			$('.page').show();
+	// 			openOuterPage();
+	// 			return true;
+	// 		}
+ //    	}
+ //    	return false;
+	// });
 
- 	setupHistoryClicks();
+ // 	setupHistoryClicks();
 
  	// $('#about').on('click', function(e) {
  	// 	e.preventDefault();
