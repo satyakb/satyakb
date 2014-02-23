@@ -165,8 +165,6 @@ body {
 	background-color: white;
 	position: absolute;
 }
-.underline.on {
-}
 .underline.off {
 	display: none;
 }

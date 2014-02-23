@@ -115,7 +115,7 @@
 
  	$(window).bind('hashchange', function() {
  		var h = location.hash;
- 		if (h === '#about') {
+ 		if (h === '#about1') {
  			showAbout();
  		}
  		if (h === '#work') {
