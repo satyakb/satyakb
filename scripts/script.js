@@ -3,6 +3,7 @@
  var side;
  var existing = false;
  var loaded = false;
+ var main = true;
 
  function openInnerPage() {
  	side = 'inner';
@@ -39,6 +40,7 @@
  function closePage() {
  	$('.inner').show();
  	$('.outer').show();
+ 	main = true;
  	console.log('close');
  	$('.inner').animate({
  		top: '0',
@@ -68,26 +70,53 @@
  // }
 
  function showAbout() {
- 	$('.page').hide();
+ 	if (main) {
+ 		$('.page').hide();
+ 	} else {
+ 		$('.page').fadeOut();
+ 	}
  	$('.underline.on').removeClass('on').addClass('off').hide();
  	$('.navBarAbout').find('.underline').removeClass('off').addClass('on').show();
- 	$('#aboutPage').show();
+ 	if (main) {
+ 		$('#aboutPage').show();
+ 		main = false;
+ 	} else {
+ 		$('#aboutPage').fadeIn();
+ 	}
  	openOuterPage();
  }
 
  function showWork() {
- 	$('.page').hide();
+ 	if (main) {
+ 		$('.page').hide();
+ 	} else {
+ 		$('.page').fadeOut();
+ 	}
  	$('.underline.on').removeClass('on').addClass('off').hide();
  	$('.navBarWork').find('.underline').removeClass('off').addClass('on').show();
- 	$('#workPage').show();
+ 	if (main) {
+ 		$('#workPage').show();
+ 		main = false;
+ 	} else {
+ 		$('#workPage').fadeIn();
+ 	}
  	openInnerPage();
  }
 
  function showContact() {
- 	$('.page').hide();
+ 	if (main) {
+ 		$('.page').hide();
+ 	} else {
+ 		$('.page').fadeOut();
+ 	}
  	$('.underline.on').removeClass('on').addClass('off').hide();
  	$('.navBarContact').find('.underline').removeClass('off').addClass('on').show();
- 	$('#contactPage').show();
+ 	if (main) {
+ 		$('#contactPage').show();
+ 		main = false;
+ 	} else {
+ 		$('#contactPage').fadeIn();
+ 	}
  	openOuterPage();
  }
 
