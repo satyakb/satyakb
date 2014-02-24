@@ -9,7 +9,10 @@
 body {
 	/*background-image: url('../images/bg.jpg');*/
 	/*background-size: 100%,100%;*/
-	overflow: hidden;
+	overflow-x: hidden;
+}
+a {
+	text-decoration: none;
 }
 #home {
 	height: 100%;
@@ -200,4 +203,153 @@ body {
 	font-weight: 500;
 	position: relative;
 	top: 10px;
+}
+.content {
+	position: absolute;
+	width: 100%;
+	top: 75px;
+}
+.list {
+	width: 80%;
+	margin: auto;
+	top: 25px;
+	position: relative;
+	list-style-type: none;
+	padding: 0 2% 0 2%;
+	height: 500px;
+	/*border-top: 1px solid black;*/
+}
+.item {
+	padding: 5px 2% 5px 2%;
+	border-top: 1px solid black;
+	display: block;
+	position: relative;
+	cursor: pointer;
+	/*border-bottom: 1px solid black;*/
+}
+.itemDiv {
+	position: relative;
+	width: 100%;
+	height: 100%;
+	border-radius: 3px;
+}
+.imageOverlay {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	background-color: rgba(0,0,0,0.5);
+	color: black;
+	text-align: center;
+	display: none;
+}
+.imageOverlay span {
+	position: relative;
+	top: 50%;
+	padding: 3px 10px 3px 10px;
+	background-color: white;
+	cursor: pointer;
+}
+.itemPic {
+	width: 35%;
+	margin: auto;
+	position: relative;
+	display: inline-block;
+	left: 1%;
+}
+.itemPic img {
+	max-width: 100%;
+}
+.itemDesc {
+	position: absolute;
+	display: inline-block;
+	left: 42%;
+	top: 30px;
+}
+.itemTitle {
+	font-size: 24px;
+	font-weight: 700;
+}
+.itemInfo {
+	/*font-family: serif;*/
+	font-size: 95%;
+	letter-spacing: 1px;
+	position: relative;
+	top: 10px;
+}
+.navBarPre {
+	position: absolute;
+	left: 2%;
+}
+.navBarNext {
+	position: absolute;
+	right: 2%;
+}
+.projText {
+	display: inline-block;
+	width: 45%;
+	position: relative;
+	left: 4%;
+	top: 150px;
+}
+.projTitle {
+	font-size: 500%;
+	font-weight: 400;
+	font-family: serif;
+}
+.projInfo {
+	position: relative;
+	top: 20px;
+	width: 80%;
+}
+.projSource {
+	position: relative;
+	top: 40px;
+}
+.projPics {
+	display: inline-block;
+	position: absolute;
+	width: 50%;
+	top: 50px;
+	overflow-y: scroll;
+	text-align: center;
+}
+.projPic {
+	width: 100%;
+	position: relative;
+	padding-bottom: 20px;
+	border-bottom: 1px solid black;
+}
+.projPics img {
+	max-width: 95%;
+	/*border: 1px solid black;*/
+}
+.contactContainer {
+	text-align: center;
+	width: 100%;
+	position: absolute;
+	top: 10%;
+}
+.thanks {
+	font-size: 300%;
+	font-weight: 300;
+	letter-spacing: 0px;
+	margin-bottom: 3%;
+	position: relative;
+	top: 12%;
+}
+.reachOut {
+	position: relative;
+	font-size: 200%;
+	font-weight: 300;
+	letter-spacing: 1px;
+	top: 20%;
+}
+.contactOptions {
+	position: relative;
+	font-size: 150%;
+	top: 40%;
+}
+.gitSpan {
+	padding-left: 25%;
+	padding-right: 25%;
 }
