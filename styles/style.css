@@ -1,7 +1,7 @@
 * {
 	margin: 0;
 	padding: 0;
-	font-family: sans-serif;
+	font-family: 'Helvetica', sans-serif;
 	font-weight: 400;
 	letter-spacing: 2px;
 	-webkit-font-smoothing: antialiased;
@@ -14,6 +14,18 @@ body {
 a {
 	text-decoration: none;
 }
+a:link { /* unvisited link */
+	color:#000000;
+}
+a:visited { /* visited link */
+	color:#000000;
+} 
+a:hover { /* mouse over link */
+	color:#000000;
+}
+a:active { /* selected link */
+	color:#000000;
+}
 #home {
 	height: 100%;
 	width: 100%;
@@ -23,7 +35,7 @@ a {
 	z-index: 100;
 }
 #dummy {
-	font-family: sans-serif;
+	font-family: 'Helvetica', sans-serif;
 	font-weight: 600;
 	font-size: 20px;
 	color: #f5f5f5;
@@ -74,7 +86,6 @@ a {
 	width: 90%;
 	left: 5%;
 	font-size: 50%;
-	font-family: sans-serif;
 	font-weight: 400;
 	letter-spacing: 0px;
 	top: 25%;
@@ -199,10 +210,19 @@ a {
 	letter-spacing: 0px;
 }
 #aboutInfo {
-	font-family: serif;
-	font-weight: 500;
+	/*font-family: serif;*/
+	font-weight: 300;
+	font-size: 75%;
+	letter-spacing: 1px;
 	position: relative;
 	top: 10px;
+}
+.aboutInfoDiv {
+	text-align: center;
+	width: 100%;
+}
+.aboutSpan {
+	padding-right: 8%;
 }
 .content {
 	position: absolute;
@@ -267,11 +287,13 @@ a {
 }
 .itemTitle {
 	font-size: 24px;
-	font-weight: 700;
+	font-weight: 300;
+	letter-spacing: 1px;
 }
 .itemInfo {
 	/*font-family: serif;*/
 	font-size: 95%;
+	font-weight: 300;
 	letter-spacing: 1px;
 	position: relative;
 	top: 10px;
@@ -289,20 +311,22 @@ a {
 	width: 45%;
 	position: relative;
 	left: 4%;
-	top: 150px;
+	top: 100px;
 }
 .projTitle {
 	font-size: 500%;
 	font-weight: 400;
-	font-family: serif;
+	font-family: 'Times', serif;
 }
 .projInfo {
 	position: relative;
+	font-weight: 300;
 	top: 20px;
 	width: 80%;
 }
 .projSource {
 	position: relative;
+	font-weight: 300;
 	top: 40px;
 }
 .projPics {
@@ -316,7 +340,8 @@ a {
 .projPic {
 	width: 100%;
 	position: relative;
-	padding-bottom: 20px;
+	padding-bottom: 10px;
+	padding-top: 10px;
 	border-bottom: 1px solid black;
 }
 .projPics img {
@@ -349,7 +374,6 @@ a {
 	font-size: 150%;
 	top: 40%;
 }
-.gitSpan {
-	padding-left: 25%;
-	padding-right: 25%;
+.contactSpan {
+	padding-right: 12%;
 }
